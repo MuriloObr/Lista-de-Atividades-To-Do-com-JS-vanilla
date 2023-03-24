@@ -23,6 +23,8 @@ function construtorEl(tag, classe = "", tipo = "none") {//Função para criar el
     return novoEl;
 }
 function addLista() {
+    valorZero();
+
     const parent = document.querySelector(".lista");
 
     //Cria list item
@@ -38,6 +40,8 @@ function addLista() {
 }
 
 function resetLista() {
+    valorZero();
+
     const checksEl = document.querySelectorAll(".to-do");
 
     for (let item of checksEl) {//Deleta todos os elementos com classe to-do
@@ -50,6 +54,8 @@ function resetLista() {
 }
 
 function salvarPreset() {
+    valorZero();
+
     const dropBox = document.querySelector(".dropdown");
     const presetName = document.querySelector(".presset").value;
 
@@ -58,8 +64,11 @@ function salvarPreset() {
     dropBox.appendChild(newOpt);
 
     salvarAtual(presetName);
+    resetLista();
 }
 function salvarAtual(name) {
+    valorZero();
+
     if (typeof(name) === "string") {
         let textos_checks = [];
         let objTxT;
@@ -79,6 +88,8 @@ function salvarAtual(name) {
 }
 
 function carregarPreset() {
+    valorZero();
+
     const pre = JSON.parse(localStorage.getItem("presets"));
     const preKeys = Object.keys(pre);
 
@@ -110,6 +121,8 @@ function carregarPreset() {
 }
 
 function loaded() {
+    valorZero();
+
     const pre = JSON.parse(localStorage.getItem("presets"));
     const preKeys = Object.keys(pre);
 
@@ -122,5 +135,17 @@ function loaded() {
         const newOpt = construtorEl("option");
         newOpt.value, newOpt.innerText = key;
         document.querySelector(".dropdown").appendChild(newOpt);
+    }
+}
+
+function valorZero() {
+    console.log("Trigger");
+    const z = document.querySelectorAll("option");
+    console.log(z);
+    for (let v of z) {
+        if (v.value === "") {
+            console.log(v);
+            v.remove();
+        }
     }
 }
