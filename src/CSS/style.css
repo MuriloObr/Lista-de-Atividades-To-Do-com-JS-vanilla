@@ -1,0 +1,192 @@
+html,
+body,
+h1,
+ul {
+  padding: 0;
+  margin: 0;
+  font-size: 16px;
+  font-family: sans-serif, monospace;
+}
+
+h1 {
+  font-size: 3em;
+  text-align: center;
+  transition: 0.5s;
+  margin-top: 3rem;
+  margin-bottom: 4rem;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.buttons {
+  margin: 0 5%;
+  display: flex;
+  justify-content: space-between;
+}
+.wrapper {
+  display: flex;
+  align-items: center;
+}
+.bt-add,
+.bt-reset,
+.bt-save {
+  height: 1.3rem;
+  width: 1.3rem;
+  appearance: none;
+  -webkit-appearance: none;
+  border: none;
+  box-shadow: 0.22em 0.2rem black;
+  border-radius: 2px;
+  margin-right: 1rem;
+  transition: 0.3s;
+}
+.bt-add {
+  background-image: url(https://upload.wikimedia.org/wikipedia/commons/f/fd/Plus_icon.svg);
+  background-size: cover;
+}
+.bt-reset {
+  background-image: url(https://cdn-icons-png.flaticon.com/512/44/44199.png);
+  background-size: cover;
+}
+.bt-save {
+  box-shadow: 0.22em 0.2rem black;
+  background-image: url(https://cdn-icons-png.flaticon.com/512/165/165107.png);
+  background-size: cover;
+}
+.bt-add:hover,
+.bt-reset:hover,
+.bt-save:hover {
+  filter: invert();
+  box-shadow: 0.22em 0.2rem gray;
+}
+.res {
+  font-weight: bold;
+}
+
+.presset,
+.dropdown {
+  height: 1rem;
+  width: 12rem;
+  padding: 0.2rem;
+  margin: 0 1rem 0 1rem;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
+
+  font-family: monospace;
+  font-weight: bold;
+}
+.presset:focus,
+.to-do__text:focus {
+  outline: 1px solid rgba(0, 0, 0, 0.5);
+}
+.dropdown {
+  height: 1.5rem;
+  width: 5rem;
+  margin: 0 0 0 1rem;
+  appearance: none;
+  outline: none;
+  -webkit-appearance: none;
+  background-image: url(https://www.iconpacks.net/icons/2/free-arrow-down-icon-3101-thumb.png);
+  background-size: 12px;
+  background-repeat: no-repeat;
+  background-position: 3.8rem 50%;
+  background-color: white;
+  filter: invert();
+}
+
+ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1.5rem;
+}
+.lista {
+  flex-direction: column;
+}
+
+.to-do {
+  display: flex;
+  align-items: center;
+  margin-top: 0.5rem;
+}
+
+.to-do__check,
+.to-do__text {
+  height: 1.5rem;
+  width: 1.5rem;
+}
+
+.to-do__check {
+  padding: 8px 8px;
+  margin-right: 1rem;
+  appearance: none;
+  -webkit-appearance: none;
+  border: 1px solid black;
+  border-radius: 5px;
+  background-size: cover;
+  transition: 0.4s;
+}
+.to-do__check:hover {
+  background-color: lightgray;
+}
+.to-do__check:checked {
+  border-radius: 15px;
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAM1BMVEX///8AAACmpqajo6OhoaHz8/PR0dH29va7u7tfX1+tra1VVVV5eXlSUlJNTU0ZGRlra2vRe4gkAAADN0lEQVR4nO2di3qqMBCEida70r7/057PLydtA0QU2dt0/heYHTMrKCHbdYQQQgghhBBCCCGEEEIIIYQQQgghhBDyZ9lfb/3pfDBSP5xP/e26F1TYXVLmKCjS5vhf/bKTUth9psJWSuMB22/1TymLl/TDRkijzeaX+kVGYp9+o72Km0pdphevlUb6EBFp8VGLX0VEbrWI6ipuBto3EZU+mVkcGky9iMxpKKNmcWQwnUR0ziMdpV7cjoXPIkKHsZDKRWO8gikJ3VUdJ6TkgzplUOyeakpM2uJERCU19S2qK2oLGqRGNzRTBsW/vzVFlXuwoBcciy82VWEzg1rhMelBTXGjHizIB8gwohnpT9g0oholGEc0Ixkj84hKl+HEoFyUHPSgbCkuerAgESc3EZUqx5nB9SPlqAcflbTcorsVXLsolwbXDKrDiGbWKszVZaJmnXA5jWhmjeJcG1wjYG57sPBugY57sPBeyJxHNPNOkSEMvhPUIAaXFxrG4NJSAxlc9o3o/jJR83q5AS4TNa9GLlREM6+VHNDga7EL1oOF58sO14OFZ6MXMqKZ50oPbPC5oIaNaGZ+fUKv4J05A+ENzoUw6GWi5pGJ4D1YaAcRIKKZlhEYg60wQvRgYcrMF84K3pmyCGVwOqgwEc3Mr2LoFbwzZzG8wTmLAAYf92LwHiy0VxFiBe+0LMIYbFkEMth1U3cyX9ZFrQn8GsL3Ifx3Kfz1EP6eBv6+FP63BfzvQ/jf+PD/08D/1wb/fyn8f97wzy3gnz3BPz+EfwYM/xx/+V6MIL0Iv58Gfk8U/L42+L2J8PtL4fcIw+/zht+rD/++xfJCg1iEf+8J/t01+PcP4d8hhX8PGP5dbvj38eHPVIA/FwP+bBP482ngzxiCPycK/qwv+PPa4M/cgz83UTZKDnoR/vxS+RgZB1XjEzYNKvxZ0FoBMguqnrCRRc3wmPQi/GwE7eCoB1W/M5QVLVpftS3gZwXhz3vCn9mFP3cNf3becP6h5qDOoUUZh/gzLOs5pNqjVutVFJoJ7GeWrMyQzr8wDxh/pnPnYS53LzqXmxBCCCGEEEIIIYQQQgghhBBCCCGEEEKc8w/YYxuI7Ao44QAAAABJRU5ErkJggg==);
+}
+
+.to-do__text {
+  width: 100rem;
+  padding: 0.2rem 5px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  font-size: 22px;
+}
+.to-do__check:checked + .to-do__text {
+  border: 1px solid white;
+  text-decoration: line-through;
+}
+
+footer {
+  height: 3rem;
+  width: 100%;
+  background-color: black;
+  color: white;
+  position: absolute;
+  bottom: 0;
+  text-align: center;
+}
+.murilo {
+  margin-top: calc(2rem - 18px);
+}
+@media screen and (max-width: 1800px) {
+  .to-do__text {
+    width: 80rem;
+  }
+}
+
+@media screen and (max-width: 1400px) {
+  .to-do__text {
+    width: 50rem;
+  }
+}
+@media screen and (max-width: 900px) {
+  .to-do__text {
+    width: 40rem;
+  }
+}
+@media screen and (max-width: 700px) {
+  .to-do__text {
+    width: 30rem;
+  }
+}
+@media screen and (max-width: 550px) {
+  .to-do__text {
+    width: 20rem;
+  }
+}
+@media screen and (max-width: 400px) {
+  .to-do__text {
+    width: 16rem;
+  }
+}
