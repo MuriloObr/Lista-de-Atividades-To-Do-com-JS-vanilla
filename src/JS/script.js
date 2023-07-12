@@ -62,7 +62,8 @@ function handleListChange() {
 function salvarPreset() {
   const presetName = presetEl.value
 
-  if (presetName.trim() === "") handleSubmit("Seu preset Não possui Nome")
+  if (presetName.trim() === "")
+    return handleSubmit("Seu preset Não possui Nome")
 
   const newOpt = construtorEl("option")
   newOpt.innerText = presetName
